@@ -6,7 +6,7 @@ type props = {
 
 const Footer = ({ className = "" }: props) => {
   return (
-    <footer className="w-full h-[15vh] flex flex-row border-t-2 font-medium text-lg border-t-dark items-center justify-between">
+    <footer className="w-full h-[15vh] flex flex-row z-10 border-t-2 font-medium text-lg border-t-dark items-center justify-between">
       <Layout className="border py-6 flex items-center justify-between">
         <span>{new Date().getFullYear()} &copy; All Rights Reserved</span>
         <p className="flex flex-row justify-center items-center gap-2">

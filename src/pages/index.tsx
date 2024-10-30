@@ -8,6 +8,7 @@ import AnimatedText from "src/components/AnimatedText";
 import { ExternalLink } from "src/components/Icons";
 import Link from "next/link";
 import HireMe from "src/components/HireMe";
+import LightBulb from "../../public/images/svgs/miscellaneous_icons_1.svg";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,12 +29,12 @@ export default function Home() {
                 className="w-full h-auto"
               />
             </div>
-            <div className=" flex flex-col w-1/2 gap-6 items-center self-center">
+            <div className=" flex flex-col w-[48%] gap-6 items-center self-center">
               <AnimatedText
                 text={"Turning Vision Into Reality With Code And Design"}
                 className={"!text-left"}
               />
-              <p>
+              <p className="text-black ">
                 As a skilled full-stack developer, I am dedicated to turning
                 ideas into innovative web applications. Explore my latest
                 projects and articles, showcasing my expertise in React.js and
@@ -61,7 +62,13 @@ export default function Home() {
             </div>
           </div>
         </Layout>
-        <HireMe />
+        <Image
+          src={LightBulb}
+          alt="Light Bulb"
+          className="absolute right-8 bottom-4 m-0 self-end"
+          height="160"
+        />
+        {/* <HireMe /> */}
       </main>
     </>
   );

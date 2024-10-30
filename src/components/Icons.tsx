@@ -71,7 +71,59 @@ export const PinterestIcon = ({ className, ...rest }: any) => (
     />
   </svg>
 );
-
+export const LightBulb = ({ className, ...rest }: any) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 38.4 65.42"
+    className={className}
+    {...rest}
+  >
+    <defs>
+      <style>
+        {`
+          .cls-1{fill:#d9e1e4;}
+          .cls-2{fill:#94b5bf;}
+          .cls-3{fill:#fbe481;}
+          .cls-4{fill:#f8a547;opacity:0.5;}
+          .cls-10,.cls-11,.cls-12,.cls-4,.cls-9{isolation:isolate;}
+          .cls-5{fill:#fca100;}
+          .cls-6{fill:#fff;}
+          .cls-7{fill:#3e3126;}
+          .cls-10,.cls-8,.cls-9{fill:#ffb320;}
+          .cls-11,.cls-9{opacity:0.75;}
+          .cls-10,.cls-12{opacity:0.35;}
+          .cls-11,.cls-12{fill:#e2ab63;}
+          .cls-13{fill:#ffefae;}
+        `}
+      </style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_1-2" data-name="Layer 1">
+        <path
+          className="cls-1"
+          d="M11.37,52.51v2a1.77,1.77,0,0,0,1.09,1.64c.19.08.41.17.65.25l.13.29v1.55a1.34,1.34,0,0,0,.83,1.26l.43.16V60a4.88,4.88,0,0,0,9.76,0h0l.17-.43.28-.11a1.36,1.36,0,0,0,.84-1.26V56.48c.3-.11.59-.22.82-.32a1.74,1.74,0,0,0,1.09-1.64v-2Z"
+        />
+        <path
+          className="cls-2"
+          d="M19.41,61.93a14,14,0,0,1-4.66-.79.48.48,0,0,1,.35-.9,12.53,12.53,0,0,0,8.2,0,.49.49,0,0,1,.37.9A11.3,11.3,0,0,1,19.41,61.93Z"
+        />
+        <path
+          className="cls-2"
+          d="M19.56,55.31a24.63,24.63,0,0,1-8.16-1.39.47.47,0,0,1-.27-.62.48.48,0,0,1,.6-.29h0c.08,0,7.77,2.92,14.9,0a.49.49,0,0,1,.63.26h0a.49.49,0,0,1-.26.63A19.84,19.84,0,0,1,19.56,55.31Z"
+        />
+        <path
+          className="cls-2"
+          d="M25.37,56.42v1.3l-.2.07A19.06,19.06,0,0,1,19,59a18.9,18.9,0,0,1-6-1.11V56.64L13,56.5A18.41,18.41,0,0,0,19,57.62Z"
+        />
+        <path
+          className="cls-3"
+          d="M28.67,51.29V47.42s-.46-7.17,2.87-12.53S37.9,26.3,37.9,18.68,31.33.5,19.22.5.55,11.07.55,18.68s3,10.86,6.35,16.21A18.41,18.41,0,0,1,9.77,45.32v6a.9.9,0,0,0,.52.82,22,22,0,0,0,17.86,0A.89.89,0,0,0,28.67,51.29Z"
+        />
+        {/* Add remaining paths and shapes here, updating all `class` attributes to `className` */}
+      </g>
+    </g>
+  </svg>
+);
 export const DribbbleIcon = ({ className, ...rest }: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
