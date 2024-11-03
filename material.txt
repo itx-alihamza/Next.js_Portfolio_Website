@@ -1,0 +1,9 @@
+=>Library : Framer motion:
+    Command : yarn add framer-motoinj
+=>repeating-radial-gradient()
+
+
+
+New Properties :
+origin-top 
+inline-block
