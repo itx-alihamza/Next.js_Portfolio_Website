@@ -3,10 +3,10 @@ import Image from "next/image";
 import AnimatedText from "src/components/AnimatedText";
 import Layout from "src/components/Layout";
 import ProfilePic from "../../public/images/profile/developer-pic-2.jpg";
-
 import Skills from "src/components/Skills";
 import AnimatedNumbers from "src/components/AnimatedNumber";
 import Experience from "src/components/Experience";
+
 const cardStyle: React.CSSProperties = {
   padding: "20px",
   borderRadius: "20px",
@@ -29,21 +29,21 @@ const about = () => {
           <div className="w-full grid grid-cols-3">
             <div className="flex flex-col font-medium items-start gap-4 overflow-hidden">
               <h3 className="text-lg font-semibold text-gray-700">BIOGRAPHY</h3>
-              <p className="">
-                Hi, I'm <b>CodeBucks</b>, a web developer and UI/UX designer
-                with a passion for creating beautiful, functional, and
+              <p>
+                Hi, I&apos;m <b>CodeBucks</b>, a web developer and UI/UX
+                designer with a passion for creating beautiful, functional, and
                 user-centered digital experiences. With 4 years of experience in
                 the field. I am always looking for new and innovative ways to
-                bring my clients' visions to life.
-              </p>
-              <p className="">
-                I believe that design is about more than just making things look
-                pretty – it's about solving problems and creating intuitive,
-                enjoyable experiences for users.
+                bring my clients&apos; visions to life.
               </p>
               <p>
-                Whether I'm working on a website, mobile app, or other digital
-                product, I bring my commitment to design excellence and
+                I believe that design is about more than just making things look
+                pretty – it&apos;s about solving problems and creating
+                intuitive, enjoyable experiences for users.
+              </p>
+              <p>
+                Whether I&apos;m working on a website, mobile app, or other
+                digital product, I bring my commitment to design excellence and
                 user-centered thinking to every project I work on. I look
                 forward to the opportunity to bring my skills and passion to
                 your next project.
