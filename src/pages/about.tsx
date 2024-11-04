@@ -5,7 +5,11 @@ import Layout from "src/components/Layout";
 import ProfilePic from "../../public/images/profile/developer-pic-2.jpg";
 import Skills from "src/components/Skills";
 import AnimatedNumbers from "src/components/AnimatedNumber";
+import Detail from "src/components/Detail";
+
+import { useRef } from "react";
 import Experience from "src/components/Experience";
+import Educatoin from "src/components/Educatoin";
 
 const cardStyle: React.CSSProperties = {
   padding: "20px",
@@ -20,7 +24,7 @@ const about = () => {
       <Head>
         <title>AliHamza | About Page</title>
       </Head>
-      <main className="w-screen h-auto">
+      <main className="max-w-screen h-auto">
         <Layout className="border border-black pt-12">
           <div className="text-center mb-16">
             <AnimatedText text="Passion Fuels" className="text-[90px]" />
@@ -90,92 +94,10 @@ const about = () => {
           </div>
           {/* Skill Section */}
           <Skills />
-          {/* Experirence Section */}
-          <div className="border-2 w-full h-auto flex flex-col justify-center items-center">
-            <h1 className="text-8xl w-full text-center font-bold pt-[15rem] pb-40">
-              Experience
-            </h1>
-            <div className="relative w-9/12 flex justify-center items-center">
-              <div className="w-1 h-full absolute left-8 top-0 bg-dark origin-top"></div>
-              <ul className="w-full ml-4 flex flex-col justify-between items-center">
-                <Experience
-                  position="Software Engineer"
-                  company="Google"
-                  companyLink="http://www.google.com"
-                  time="2022-Present"
-                  address="Mountain View, CA"
-                  work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
-                />
-                <Experience
-                  position="Software Engineer"
-                  company="Google"
-                  companyLink="http://www.google.com"
-                  time="2022-Present"
-                  address="Mountain View, CA"
-                  work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
-                />
-                <Experience
-                  position="Software Engineer"
-                  company="Google"
-                  companyLink="http://www.google.com"
-                  time="2022-Present"
-                  address="Mountain View, CA"
-                  work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
-                />
-                <Experience
-                  position="Software Engineer"
-                  company="Google"
-                  companyLink="http://www.google.com"
-                  time="2022-Present"
-                  address="Mountain View, CA"
-                  work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
-                />
-                <Experience
-                  position="Software Engineer"
-                  company="Google"
-                  companyLink="http://www.google.com"
-                  time="2022-Present"
-                  address="Mountain View, CA"
-                  work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
-                />
-              </ul>
-            </div>
-          </div>
+          {/* Experience Section */}
+          <Experience />
           {/* Education Section */}
-          <div className="border-2 w-full h-auto flex flex-col justify-center items-center">
-            <h1 className="text-8xl w-full text-center font-bold pt-[15rem] pb-40">
-              Education
-            </h1>
-            <div className="relative w-9/12 flex justify-center items-center">
-              <div className="w-1 h-full absolute left-8 top-0 bg-dark origin-top"></div>
-              <ul className="w-full ml-4 flex flex-col justify-between items-center">
-                <Experience
-                  position="Bachelor of Science in Computer Science"
-                  company="Google"
-                  companyLink="http://www.google.com"
-                  time="2016-2020"
-                  address="Massachusetts Institute of Technology (MIT)"
-                  work="Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial Intelligence."
-                />
-                <Experience
-                  position="Bachelor of Science in Computer Science"
-                  company="Google"
-                  companyLink="http://www.google.com"
-                  time="2016-2020"
-                  address="Massachusetts Institute of Technology (MIT)"
-                  work="Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial Intelligence."
-                />
-                <Experience
-                  position="Bachelor of Science in Computer Science"
-                  company="Google"
-                  companyLink="http://www.google.com"
-                  time="2016-2020"
-                  address="Massachusetts Institute of Technology (MIT)"
-                  work="Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial Intelligence."
-                />
-              </ul>
-            </div>
-          </div>
+          <Educatoin />
         </Layout>
       </main>
     </>

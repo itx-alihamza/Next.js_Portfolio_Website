@@ -1,38 +1,70 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useScroll } from "framer-motion";
+import Detail from "./Detail";
 
-type Props = {
-  position: string;
-  company: string;
-  companyLink: string;
-  time: string;
-  address: string;
-  work: string;
-};
-
-const Experience = ({
-  position,
-  company,
-  companyLink,
-  time,
-  address,
-  work,
-}: Props) => {
+const Experience = () => {
+  const ref: any = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "center start"],
+  });
   return (
-    <li className="w-[60%] first:mt-0 last:mb-0 mb-20 flex flex-col justify-center items-center">
-      <div>
-        <h3 className="font-bold text-2xl">
-          {position}&nbsp;
-          <a href={companyLink} className="text-primary">
-            @{company}
-          </a>
-        </h3>
-
-        <span className="text-gray-500">
-          {time} | {address}
-        </span>
-        <p className="text-md">{work}</p>
+    <div className=" w-full h-auto flex flex-col justify-center items-center">
+      <h1 className="text-8xl w-full text-center font-bold pt-[15rem] pb-40">
+        Experience
+      </h1>
+      <div
+        ref={ref}
+        className="relative w-9/12 flex justify-center items-center"
+      >
+        <motion.div
+          style={{ scaleY: scrollYProgress }}
+          className="w-1 h-full absolute left-9 top-0 bg-dark origin-top"
+        ></motion.div>
+        <ul className="w-full ml-4 flex flex-col justify-between items-center">
+          <Detail
+            position="Software Engineer"
+            company="Google"
+            companyLink="http://www.google.com"
+            time="2022-Present"
+            address="Mountain View, CA"
+            work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
+          />
+          <Detail
+            position="Software Engineer"
+            company="Google"
+            companyLink="http://www.google.com"
+            time="2022-Present"
+            address="Mountain View, CA"
+            work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
+          />
+          <Detail
+            position="Software Engineer"
+            company="Google"
+            companyLink="http://www.google.com"
+            time="2022-Present"
+            address="Mountain View, CA"
+            work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
+          />
+          <Detail
+            position="Software Engineer"
+            company="Google"
+            companyLink="http://www.google.com"
+            time="2022-Present"
+            address="Mountain View, CA"
+            work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
+          />
+          <Detail
+            position="Software Engineer"
+            company="Google"
+            companyLink="http://www.google.com"
+            time="2022-Present"
+            address="Mountain View, CA"
+            work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
+          />
+        </ul>
       </div>
-    </li>
+    </div>
   );
 };
 
