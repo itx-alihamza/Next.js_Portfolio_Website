@@ -31,7 +31,7 @@ const about = () => {
             <AnimatedText text="Purpose!" className="text-[90px]" />
           </div>
           <div className="w-full grid grid-cols-3">
-            <div className="flex flex-col font-medium items-start gap-4 overflow-hidden">
+            <div className="flex flex-col text-justify font-medium items-start gap-4 overflow-hidden">
               <h3 className="text-lg font-semibold text-gray-700">BIOGRAPHY</h3>
               <p>
                 Hi, I&apos;m <b>CodeBucks</b>, a web developer and UI/UX
@@ -54,7 +54,7 @@ const about = () => {
               </p>
             </div>
             <div
-              className="border-1 border-purple-800  relative w-full h-max p-6 border rounded-2xl bg-black "
+              className="ml-16 border-1 border-purple-800  relative w-full h-max p-6 border rounded-2xl bg-black "
               style={cardStyle}
             >
               {/* <div className="border-2 border-blue-950 absolute -top-4 -left-3 p-6  h-max w-full bg-light rounded-3xl"> */}

@@ -17,14 +17,18 @@ export default function App({ Component, pageProps }: any) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main
-        className={`${montserrant.variable} font-mont bg-light w-full min-h-screen`}
-      >
+      <div className="min-h-screen flex flex-col bg-light">
         <NavBar />
-        <Component {...pageProps} />
+
+        <main
+          className={`${montserrant.variable} font-mont bg-light w-full  flex flex-col flex-grow`}
+        >
+          <Component {...pageProps} />
+        </main>
+
         <Footer className={``} />
         <HireMe />
-      </main>
+      </div>
     </>
   );
 }

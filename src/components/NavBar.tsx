@@ -38,7 +38,7 @@ const NavBar = () => {
       <nav className=" gap-2">
         <CustomLink href="/" title="Home" className="mx-4" />
         <CustomLink href="/about" title="About" className="mx-4" />
-        <CustomLink href="/project" title="Project" className="mx-4" />
+        <CustomLink href="/projects" title="Project" className="mx-4" />
         <CustomLink href="/articles" title="Articles" className="mx-4" />
       </nav>
       <Logo />
