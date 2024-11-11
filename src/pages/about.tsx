@@ -24,7 +24,7 @@ const about = () => {
       <Head>
         <title>AliHamza | About Page</title>
       </Head>
-      <main className="max-w-screen h-auto">
+      <main className="max-w-screen h-auto dark:bg-dark dark:text-light">
         <Layout className="border border-black pt-12">
           <div className="text-center mb-16">
             <AnimatedText text="Passion Fuels" className="text-[90px]" />

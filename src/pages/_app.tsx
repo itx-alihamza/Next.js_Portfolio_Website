@@ -4,6 +4,8 @@ import Head from "next/head";
 import NavBar from "../components/NavBar";
 import Footer from "src/components/Footer";
 import HireMe from "src/components/HireMe";
+import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 const montserrant = Montserrat({
   subsets: ["latin"],
@@ -11,6 +13,7 @@ const montserrant = Montserrat({
 });
 
 export default function App({ Component, pageProps }: any) {
+  const curPath = usePathname();
   return (
     <>
       <Head>
@@ -21,13 +24,13 @@ export default function App({ Component, pageProps }: any) {
         <NavBar />
 
         <main
-          className={`${montserrant.variable} font-mont bg-light w-full  flex flex-col flex-grow`}
+          className={`${montserrant.variable} font-mont bg-light dark:bg-dark w-full  flex flex-col flex-grow`}
         >
           <Component {...pageProps} />
         </main>
 
         <Footer className={``} />
-        <HireMe />
+        {curPath == "/" ? <HireMe /> : null}
       </div>
     </>
   );

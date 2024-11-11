@@ -34,9 +34,9 @@ type props = {
 
 const AnimatedText = ({ text, className = "" }: props) => {
   return (
-    <div className="w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden">
+    <div className="w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden dark:bg-dark dark:text-light">
       <motion.h1 //Without motion working
-        className={`inline-block w-full text-dark font-bold capitalize text-6xl ${className}`}
+        className={`inline-block w-full text-dark font-bold capitalize text-6xl ${className} dark:bg-dark dark:text-light`}
         variants={quote}
         initial="initial"
         animate="animate"
@@ -44,7 +44,7 @@ const AnimatedText = ({ text, className = "" }: props) => {
         {text.split(" ").map((word, index) => (
           <motion.span
             key={word + "-" + index}
-            className="inline-block"
+            className="inline-block dark:bg-dark dark:text-light"
             variants={singleWord}
           >
             {word}&nbsp;
