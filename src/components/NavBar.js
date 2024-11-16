@@ -47,7 +47,7 @@ const NavBar = () => {
     <header className="w-full h-[14vh] px-28 py-8 dark:bg-dark  flex justify-between dark:text-light">
       <nav className=" gap-2">
         <CustomLink href="/" title="Home" className="mx-4" />
-        <CustomLink href="/about" title="About" className="mx-4" />
+        <CustomLink href="/About" title="About" className="mx-4" />
         <CustomLink href="/projects" title="Project" className="mx-4" />
         <CustomLink href="/articles" title="Articles" className="mx-4" />
       </nav>

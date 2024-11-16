@@ -28,7 +28,7 @@ const ProjectFeatureCard = ({
 }: Props) => {
   //Inside Component
   const { theme } = useTheme();
-  console.log("Theme :", theme);
+  console.log("Theme Feature Card:", theme);
 
   const cardShadow: React.CSSProperties = {
     borderRadius: "30px",
@@ -37,11 +37,13 @@ const ProjectFeatureCard = ({
         ? "10px 12px 0 rgba(255, 255, 255, 1)"
         : "10px 12px 0 rgba(0, 0, 0, 1)",
   };
-
+  console.log("COlSPAN :", colSpan);
   return (
     <div
-      className={` col-span-${colSpan} p-[1.5rem] gap-6 grid ${
-        colSpan === 2 ? "grid-cols-2 p-[3rem]" : ""
+      className={`${
+        colSpan === ColSpanType.TWO ? "col-span-2" : "col-span-1"
+      } p-[1.5rem] gap-6 grid ${
+        colSpan === ColSpanType.TWO ? "grid-cols-2 p-[3rem]" : ""
       } rounded-3xl border-black border dark:text-light dark:border-light`}
       style={cardShadow}
     >
@@ -65,15 +67,15 @@ const ProjectFeatureCard = ({
         <a href={link} className="text-4xl font-bold hover:underline">
           {heading}
         </a>
-        {colSpan == 2 ? (
+        {colSpan == ColSpanType.TWO ? (
           <p className="text-dark text-base font-medium dark:text-light">
             {detail}
           </p>
         ) : null}
 
-        {colSpan === 2 ? (
+        {colSpan === ColSpanType.TWO ? (
           <div className="flex flex-row items-center gap-4">
-            <GithubIcon className="w-[42px]" />
+            <GithubIcon className="w-10" />
             <div className="w-36 h-12 bg-dark dark:bg-light px-2 py-1  flex justify-center items-center rounded-lg">
               <a className=" text-center text-lg  font-bold text-light dark:text-dark">
                 Visit Project
