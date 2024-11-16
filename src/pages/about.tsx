@@ -5,14 +5,11 @@ import Layout from "src/components/Layout";
 import ProfilePic from "../../public/images/profile/developer-pic-2.jpg";
 import Skills from "src/components/Skills";
 import AnimatedNumbers from "src/components/AnimatedNumber";
-import Detail from "src/components/Detail";
-
-import { useRef } from "react";
 import Experience from "src/components/Experience";
 import Educatoin from "src/components/Educatoin";
 import { useTheme } from "src/components/hooks/useThemeContext";
 
-const about = () => {
+const About = () => {
   const { theme } = useTheme();
   const cardStyle: React.CSSProperties = {
     padding: "20px",
@@ -110,4 +107,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;
