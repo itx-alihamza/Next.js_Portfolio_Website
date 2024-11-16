@@ -33,7 +33,7 @@ const Detail = ({
       >
         <h3 className="font-bold text-2xl">
           {position}&nbsp;
-          <a href={companyLink} className="text-primary">
+          <a href={companyLink} className="text-primary dark:text-primaryDark">
             @{company}
           </a>
         </h3>

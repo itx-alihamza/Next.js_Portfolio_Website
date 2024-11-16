@@ -13,6 +13,7 @@ import {
 } from "./Icons";
 import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
+import { useTheme } from "./hooks/useThemeContext";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
@@ -41,6 +42,7 @@ const CustomLink = ({ href, title, className = "" }) => {
 // };
 const NavBar = () => {
   const [mode, setMode] = useThemeSwitcher();
+  const { toggleTheme } = useTheme();
   return (
     <header className="w-full h-[14vh] px-28 py-8 dark:bg-dark  flex justify-between dark:text-light">
       <nav className=" gap-2">
@@ -93,7 +95,10 @@ const NavBar = () => {
         </motion.a>
         <motion.button
           className="w-6"
-          onClick={() => setMode(mode === "light" ? "dark" : "light")}
+          onClick={() => {
+            setMode(mode === "light" ? "dark" : "light");
+            toggleTheme();
+          }}
         >
           {mode === "dark" ? (
             <MoonIcon

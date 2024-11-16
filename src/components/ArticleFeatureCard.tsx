@@ -2,11 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { GithubIcon } from "./Icons";
-
-const cardShadow: React.CSSProperties = {
-  borderRadius: "30px",
-  boxShadow: "10px 12px 0 rgba(0, 0, 0, 1)",
-};
+import { useTheme } from "./hooks/useThemeContext";
 
 const noOfLines: React.CSSProperties = {
   display: "-webkit-box",
@@ -32,9 +28,18 @@ const ArticleFeatureCard = ({
   length,
   colSpan = 1,
 }: Props) => {
+  const { theme } = useTheme();
+  const cardShadow: React.CSSProperties = {
+    borderRadius: "30px",
+    boxShadow:
+      theme === "dark"
+        ? "10px 12px 0 rgba(255, 255, 255, 1)"
+        : "10px 12px 0 rgba(0, 0, 0, 1)",
+  };
+
   return (
     <div
-      className={`col-span-${colSpan} dark:bg-dark dark:text-light w-full h-auto p-[1.3rem] gap-8 grid ${
+      className={`col-span-${colSpan} dark:border-light dark:bg-dark dark:text-light w-full h-auto p-[1.3rem] gap-8 grid ${
         colSpan === 2 ? "grid-cols-2 p-[3rem]" : ""
       } rounded-3xl border-black border`}
       style={cardShadow}
@@ -56,7 +61,7 @@ const ArticleFeatureCard = ({
           {detail}
         </p>
         <span
-          className={`text-primary ${
+          className={`text-primary dark:text-primaryDark ${
             colSpan === 2 ? "text-xl" : "text-base"
           } font-semibold`}
         >

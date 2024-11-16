@@ -6,6 +6,7 @@ import Footer from "src/components/Footer";
 import HireMe from "src/components/HireMe";
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
+import { ThemeProvider } from "src/components/hooks/useThemeContext";
 
 const montserrant = Montserrat({
   subsets: ["latin"],
@@ -15,7 +16,7 @@ const montserrant = Montserrat({
 export default function App({ Component, pageProps }: any) {
   const curPath = usePathname();
   return (
-    <>
+    <ThemeProvider>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -32,6 +33,6 @@ export default function App({ Component, pageProps }: any) {
         <Footer className={``} />
         {curPath == "/" ? <HireMe /> : null}
       </div>
-    </>
+    </ThemeProvider>
   );
 }

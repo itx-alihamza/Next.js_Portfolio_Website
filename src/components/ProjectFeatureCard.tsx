@@ -1,12 +1,14 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GithubIcon } from "./Icons";
 import { motion } from "framer-motion";
+import useThemeSwitcher from "./hooks/useThemeSwitcher";
+import { useTheme } from "./hooks/useThemeContext";
 
-const cardShadow: React.CSSProperties = {
-  borderRadius: "30px",
-  boxShadow: "10px 12px 0 rgba(0, 0, 0, 1)",
-};
+export enum ColSpanType {
+  TWO = 2,
+  ONE = 1,
+}
 
 type Props = {
   image: any;
@@ -14,7 +16,7 @@ type Props = {
   heading: string;
   detail: string;
   link: string;
-  colSpan: number;
+  colSpan?: ColSpanType;
 };
 const ProjectFeatureCard = ({
   image,
@@ -22,13 +24,25 @@ const ProjectFeatureCard = ({
   heading,
   detail,
   link,
-  colSpan = 2,
+  colSpan = ColSpanType.TWO,
 }: Props) => {
+  //Inside Component
+  const { theme } = useTheme();
+  console.log("Theme :", theme);
+
+  const cardShadow: React.CSSProperties = {
+    borderRadius: "30px",
+    boxShadow:
+      theme === "dark"
+        ? "10px 12px 0 rgba(255, 255, 255, 1)"
+        : "10px 12px 0 rgba(0, 0, 0, 1)",
+  };
+
   return (
     <div
       className={` col-span-${colSpan} p-[1.5rem] gap-6 grid ${
         colSpan === 2 ? "grid-cols-2 p-[3rem]" : ""
-      } rounded-3xl border-black border dark:text-light`}
+      } rounded-3xl border-black border dark:text-light dark:border-light`}
       style={cardShadow}
     >
       <div className="w-full h-full overflow-hidden rounded-lg">
@@ -57,11 +71,11 @@ const ProjectFeatureCard = ({
           </p>
         ) : null}
 
-        {colSpan == 2 ? (
+        {colSpan === 2 ? (
           <div className="flex flex-row items-center gap-4">
-            <GithubIcon className="w-[44px]" />
-            <div className="w-36 h-12 bg-dark px-2 py-1  flex justify-center items-center rounded-lg">
-              <a className=" text-center text-lg  font-bold text-light">
+            <GithubIcon className="w-[42px]" />
+            <div className="w-36 h-12 bg-dark dark:bg-light px-2 py-1  flex justify-center items-center rounded-lg">
+              <a className=" text-center text-lg  font-bold text-light dark:text-dark">
                 Visit Project
               </a>
             </div>

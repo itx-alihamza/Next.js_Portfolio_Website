@@ -19,8 +19,8 @@ const Experience = () => {
       >
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="w-1 h-full absolute left-9 top-0 bg-dark origin-top"
-        ></motion.div>
+          className="w-1 h-full absolute left-9 top-0 bg-dark origin-top dark:bg-primaryDark"
+        />
         <ul className="w-full ml-4 flex flex-col justify-between items-center">
           <Detail
             position="Software Engineer"

@@ -1,7 +1,9 @@
 import Head from "next/head";
 import React from "react";
 import AnimatedText from "src/components/AnimatedText";
-import ProjectFeatureCard from "src/components/ProjectFeatureCard";
+import ProjectFeatureCard, {
+  ColSpanType,
+} from "src/components/ProjectFeatureCard";
 import coverImg from "../../public/images/projects/agency-website-cover-image.jpg";
 import Image from "next/image";
 
@@ -19,7 +21,7 @@ const projects = () => {
         />
         <div className="w-full h-auto py-24 grid grid-cols-2 gap-28 ">
           <ProjectFeatureCard
-            colSpan={2}
+            colSpan={ColSpanType.TWO}
             contentType="Portfolio Website"
             heading="React Portfolio Website"
             detail="A professional portfolio website using React JS, Framer-motion, and Styled-components. It has smooth page transitions, cool background effects, unique design and it is mobile responsive."

@@ -10,15 +10,19 @@ import Detail from "src/components/Detail";
 import { useRef } from "react";
 import Experience from "src/components/Experience";
 import Educatoin from "src/components/Educatoin";
-
-const cardStyle: React.CSSProperties = {
-  padding: "20px",
-  borderRadius: "20px",
-  backgroundColor: "white",
-  boxShadow: "14px 14px 0px rgba(0, 0, 0, 1)", // Adjust shadow color and size for a solid look
-};
+import { useTheme } from "src/components/hooks/useThemeContext";
 
 const about = () => {
+  const { theme } = useTheme();
+  const cardStyle: React.CSSProperties = {
+    padding: "20px",
+    borderRadius: "20px",
+
+    boxShadow:
+      theme === "dark"
+        ? "10px 12px 0 rgba(255, 255, 255, 1)"
+        : "10px 12px 0 rgba(0, 0, 0, 1)",
+  };
   return (
     <>
       <Head>
@@ -32,7 +36,9 @@ const about = () => {
           </div>
           <div className="w-full grid grid-cols-3">
             <div className="flex flex-col text-justify font-medium items-start gap-4 overflow-hidden">
-              <h3 className="text-lg font-semibold text-gray-700">BIOGRAPHY</h3>
+              <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-400">
+                BIOGRAPHY
+              </h3>
               <p>
                 Hi, I&apos;m <b>CodeBucks</b>, a web developer and UI/UX
                 designer with a passion for creating beautiful, functional, and
@@ -54,7 +60,7 @@ const about = () => {
               </p>
             </div>
             <div
-              className="ml-16 border-1 border-purple-800  relative w-full h-max p-6 border rounded-2xl bg-black "
+              className="ml-16 border-1 border-purple-800  relative w-full h-max p-6 border rounded-2xl bg-light dark:bg-dark  dark:border-light   "
               style={cardStyle}
             >
               {/* <div className="border-2 border-blue-950 absolute -top-4 -left-3 p-6  h-max w-full bg-light rounded-3xl"> */}

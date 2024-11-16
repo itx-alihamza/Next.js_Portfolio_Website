@@ -23,6 +23,8 @@ module.exports = {
       backgroundImage: {
         circularLight:
           "repeating-radial-gradient(rgb(0,0,0,0.4) , #f5f5f5 2px, #f5f5f5 100px);",
+        circularDark:
+          "repeating-radial-gradient(rgb(225,225, 225,0.5) , #1b1b1b 8px, #1b1b1b 100px);",
       },
     },
   },
