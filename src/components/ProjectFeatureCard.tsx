@@ -37,7 +37,6 @@ const ProjectFeatureCard = ({
         ? "10px 12px 0 rgba(255, 255, 255, 1)"
         : "10px 12px 0 rgba(0, 0, 0, 1)",
   };
-  console.log("COlSPAN :", colSpan);
   return (
     <div
       className={`${
@@ -75,7 +74,7 @@ const ProjectFeatureCard = ({
 
         {colSpan === ColSpanType.TWO ? (
           <div className="flex flex-row items-center gap-4">
-            <GithubIcon className="w-10" />
+            <GithubIcon className="w-10 h-10" />
             <div className="w-36 h-12 bg-dark dark:bg-light px-2 py-1  flex justify-center items-center rounded-lg">
               <a className=" text-center text-lg  font-bold text-light dark:text-dark">
                 Visit Project
@@ -91,7 +90,7 @@ const ProjectFeatureCard = ({
               Visit
             </a>
             <a href="http://www.something.com">
-              <GithubIcon className="w-[30px]" />
+              <GithubIcon className="w-8 h-8" />
             </a>
           </div>
         )}
