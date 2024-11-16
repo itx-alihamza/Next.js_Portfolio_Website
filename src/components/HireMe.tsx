@@ -12,7 +12,7 @@ const HireMe = () => {
           src={circularText}
           width={150}
           height={150}
-          className="animate-spin-slow  dark:text-light"
+          className="animate-spin-slow  dark:text-light dark:invert"
         />
         <Link
           href="mailto:itx.alihamza.pro@gmail.com"

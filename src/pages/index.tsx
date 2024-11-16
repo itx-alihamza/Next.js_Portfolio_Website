@@ -27,6 +27,7 @@ export default function Home() {
                 src={profilePic}
                 alt="Ali Hamza"
                 className="w-full h-auto"
+                priority
               />
             </div>
             <div className=" flex flex-col w-[48%] gap-6 items-center self-center">

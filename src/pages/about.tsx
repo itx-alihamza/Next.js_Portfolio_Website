@@ -65,6 +65,8 @@ const About = () => {
                 className=" rounded-3xl"
                 src={ProfilePic}
                 alt="Profile pic"
+                priority
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
               />
               {/* </div> */}
             </div>
@@ -73,7 +75,7 @@ const About = () => {
                 <span className="text-7xl font-extrabold">
                   <AnimatedNumbers value={50} />+
                 </span>
-                <h3 className="text-bold text-2xl text-dark">
+                <h3 className="text-bold text-2xl text-dark dark:text-light">
                   satisfied clients
                 </h3>
               </div>
@@ -81,7 +83,7 @@ const About = () => {
                 <span className="text-7xl font-extrabold">
                   <AnimatedNumbers value={40} />+
                 </span>
-                <h3 className="text-bold text-2xl text-dark">
+                <h3 className="text-bold text-2xl text-dark dark:text-light">
                   projects completed
                 </h3>
               </div>
@@ -89,7 +91,7 @@ const About = () => {
                 <span className="text-7xl font-extrabold">
                   <AnimatedNumbers value={4} />+
                 </span>
-                <h3 className="text-bold text-2xl text-dark">
+                <h3 className="text-bold text-2xl text-dark dark:text-light">
                   Years of experiences
                 </h3>
               </div>
