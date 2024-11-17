@@ -24,7 +24,7 @@ const ListCard = ({ className, heading, date }: Props) => {
       initial={{ y: 200 }}
       whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
       viewport={{ once: true }}
-      className={` shado w-full h-auto flex flex-row justify-between items-center px-2 py-5 border border-black dark:border-light rounded-lg  dark:text-light`}
+      className={`w-full h-auto flex flex-row justify-between items-center px-2 py-5 border border-black dark:border-light rounded-lg  dark:text-light`}
       style={cardShadow}
     >
       <a

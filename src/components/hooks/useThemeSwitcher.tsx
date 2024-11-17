@@ -34,7 +34,7 @@ const useThemeSwitcher = () => {
     mdeiaQuery.addEventListener("change", handleChange);
 
     return () => mdeiaQuery.removeEventListener("change", handleChange);
-  }, [mode]);
+  }, []);
 
   useEffect(() => {
     if (mode === "dark") {
@@ -46,7 +46,6 @@ const useThemeSwitcher = () => {
       document.documentElement.classList.remove("dark");
     }
     console.log("Theme State : ", mode);
-    console.log("Theme LocalStorage : ");
   }, [mode]);
   return [mode, setMode];
 };

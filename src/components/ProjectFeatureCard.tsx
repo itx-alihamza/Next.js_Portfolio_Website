@@ -4,6 +4,7 @@ import { GithubIcon } from "./Icons";
 import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
 import { useTheme } from "./hooks/useThemeContext";
+import Link from "next/link";
 
 export enum ColSpanType {
   TWO = 2,
@@ -46,15 +47,21 @@ const ProjectFeatureCard = ({
       } rounded-3xl border-black border dark:text-light dark:border-light`}
       style={cardShadow}
     >
-      <div className="w-full h-full overflow-hidden rounded-lg">
+      <Link href="" className="w-full h-full overflow-hidden rounded-lg">
         <motion.div
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.2 }}
           className="w-full h-full"
         >
-          <Image src={image} alt="cover image" className="" />
+          <Image
+            src={image}
+            alt="cover image"
+            className=""
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+          />
         </motion.div>
-      </div>
+      </Link>
       <div className="flex flex-col justify-between items-start">
         <h2
           className={`text-primary ${

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { GithubIcon } from "./Icons";
 import { useTheme } from "./hooks/useThemeContext";
+import Link from "next/link";
 
 const noOfLines: React.CSSProperties = {
   display: "-webkit-box",
@@ -44,15 +45,21 @@ const ArticleFeatureCard = ({
       } rounded-3xl border-black border`}
       style={cardShadow}
     >
-      <div className="w-full h-auto overflow-hidden rounded-lg">
+      <Link href="" className="w-full h-auto overflow-hidden rounded-lg">
         <motion.div
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.2 }}
           className="w-full h-full"
         >
-          <Image src={image} alt="cover image" className="" />
+          <Image
+            src={image}
+            alt="cover image"
+            className=""
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+          />
         </motion.div>
-      </div>
+      </Link>
       <div className="flex flex-col gap-3 justify-between items-start">
         <a href={link} className="text-2xl font-bold hover:underline">
           {heading}
