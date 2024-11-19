@@ -6,12 +6,13 @@ import Link from "next/link";
 type Prop = {
   className?: string;
   circularImgSize?: string;
+  display?: string;
 };
 
-const HireMe = ({ className, circularImgSize }: Prop) => {
+const HireMe = ({ display, className, circularImgSize }: Prop) => {
   return (
     <div
-      className={`invisible left-4 bottom-4 items-center justify-center overflow-hidden ${className}`}
+      className={` left-4 bottom-4 items-center justify-center overflow-hidden ${className} ${display}`}
     >
       <div className="w-48  h-auto flex items-center justify-center relative ">
         <Image

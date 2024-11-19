@@ -9,6 +9,23 @@ import Experience from "src/components/Experience";
 import Educatoin from "src/components/Educatoin";
 import { useTheme } from "src/components/hooks/useThemeContext";
 
+type AnimatedNumProp = {
+  value: number;
+  text: string;
+};
+const AnimatedNumbersWithText = ({ value, text }: AnimatedNumProp) => {
+  return (
+    <div className="flex flex-col justify-center items-end md:items-center gap-2">
+      <span className="text-7xl font-extrabold">
+        <AnimatedNumbers value={value} />+
+      </span>
+      <h3 className="text-bold text-2xl md:text-lg md:text-center text-dark dark:text-light">
+        {text}
+      </h3>
+    </div>
+  );
+};
+
 const About = () => {
   const { theme } = useTheme();
   const cardStyle: React.CSSProperties = {
@@ -26,12 +43,18 @@ const About = () => {
         <title>AliHamza | About Page</title>
       </Head>
       <main className="max-w-screen h-auto dark:bg-dark dark:text-light">
-        <Layout className=" py-20">
+        <Layout className=" py-20 pt-12">
           <div className="text-center mb-16">
-            <AnimatedText text="Passion Fuels" className="text-[90px]" />
-            <AnimatedText text="Purpose!" className="text-[90px]" />
+            <AnimatedText
+              text="Passion Fuels"
+              className="text-[90px] md:!text-7xl"
+            />
+            <AnimatedText
+              text="Purpose!"
+              className="text-[90px] md:!text-7xl"
+            />
           </div>
-          <div className="w-full grid grid-cols-3">
+          <div className="w-full grid grid-cols-3 md:gap-16 md:grid-cols-2">
             <div className="flex flex-col text-justify font-medium items-start gap-4 overflow-hidden">
               <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-400">
                 BIOGRAPHY
@@ -57,7 +80,7 @@ const About = () => {
               </p>
             </div>
             <div
-              className="ml-16 border-1 border-purple-800  relative w-full h-max p-6 border rounded-2xl bg-light dark:bg-dark  dark:border-light   "
+              className="ml-16 md:ml-0 border-1 border-purple-800  relative w-full h-max p-6 border rounded-2xl bg-light dark:bg-dark  dark:border-light   "
               style={cardStyle}
             >
               {/* <div className="border-2 border-blue-950 absolute -top-4 -left-3 p-6  h-max w-full bg-light rounded-3xl"> */}
@@ -70,31 +93,10 @@ const About = () => {
               />
               {/* </div> */}
             </div>
-            <div className="flex flex-col justify-between items-end overflow-hidden">
-              <div className="flex flex-col justify-center items-end gap-2">
-                <span className="text-7xl font-extrabold">
-                  <AnimatedNumbers value={50} />+
-                </span>
-                <h3 className="text-bold text-2xl text-dark dark:text-light">
-                  satisfied clients
-                </h3>
-              </div>
-              <div className="flex flex-col justify-center items-end gap-2">
-                <span className="text-7xl font-extrabold">
-                  <AnimatedNumbers value={40} />+
-                </span>
-                <h3 className="text-bold text-2xl text-dark dark:text-light">
-                  projects completed
-                </h3>
-              </div>
-              <div className="flex flex-col justify-center items-end gap-2">
-                <span className="text-7xl font-extrabold">
-                  <AnimatedNumbers value={4} />+
-                </span>
-                <h3 className="text-bold text-2xl text-dark dark:text-light">
-                  Years of experiences
-                </h3>
-              </div>
+            <div className="flex flex-col justify-between items-end overflow-hidden md:gap-10 md:col-span-2 md:flex-row">
+              <AnimatedNumbersWithText text="satisfied clients" value={50} />
+              <AnimatedNumbersWithText text="projects completed" value={40} />
+              <AnimatedNumbersWithText text="Years of experiences" value={4} />
             </div>
           </div>
           {/* Skill Section */}

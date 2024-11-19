@@ -7,7 +7,7 @@ const Educatoin = () => {
       <h1 className="text-8xl w-full text-center font-bold pt-[15rem] pb-40">
         Education
       </h1>
-      <div className="relative w-9/12 flex justify-center items-center">
+      <div className="relative w-9/12 md:w-full flex justify-center items-center">
         <div className="w-1 h-full absolute left-9 top-0 bg-dark dark:bg-primaryDark origin-top" />
         <ul className="w-full ml-4 flex flex-col justify-between items-center">
           <Detail

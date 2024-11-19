@@ -51,9 +51,9 @@ const NavBar = () => {
   };
 
   return (
-    <header className="w-full h-[14vh] lg:h-[16vh] px-28 lg:px-16 md:px-10 py-8 lg:py-0  dark:bg-dark  flex justify-between items-center dark:text-light">
+    <header className="max-w-screen h-[14vh] pb-2 lg:h-[16vh] px-28 py-10 lg:px-16 md:px-10 pd:mb-6 sm:px-8 xs:pr-2  lg:py-0  dark:bg-dark  flex justify-between items-center dark:text-light">
       <button
-        className=" w-4 h-4 flex flex-col justify-center items-center"
+        className=" w-4 h-4 hidden flex-col justify-center items-center lg:flex"
         onClick={onNavBtnClick}
       >
         <span
@@ -73,14 +73,14 @@ const NavBar = () => {
         ></span>
       </button>
       {navBtn ? (
-        <div className="fixed flex flex-col gap-4 justify-center items-center top-28 bottom-28 left-36 right-36  bg-opacity-20  backdrop-blur-md dark:backdrop-blur-lg bg-dark dark:bg-light/75 z-30 rounded-md">
+        <div className="fixed flex flex-col gap-4 justify-center items-center top-4 bottom-4 left-[12%] right-[12%] sm:left-8 sm:right-8 xs:left-4 xs:right-4   bg-opacity-90  backdrop-blur-md dark:backdrop-blur-lg bg-dark dark:bg-light/75 z-30 rounded-md">
           <nav className="flex flex-col gap-4 justify-center items-center">
             <CustomLink href="/" title="Home" className="mx-4" />
             <CustomLink href="/about" title="About" className="mx-4" />
             <CustomLink href="/projects" title="Project" className="mx-4" />
             <CustomLink href="/articles" title="Articles" className="mx-4" />
           </nav>
-          <nav className="flex items-center justify-center flex-wrap gap-5 ">
+          <nav className="flex items-center justify-center flex-wrap gap-5 sm:gap-2 ">
             <motion.a
               href="https://twitter.com"
               whileHover={{ y: -2 }}
@@ -214,8 +214,9 @@ const NavBar = () => {
         </motion.button>
       </nav>
       <HireMe
-        className="md:visible flex w-20"
-        circularImgSize="md:w-20 md:h-20"
+        className=" flex w-20 md:mt-4 md:z-10 "
+        circularImgSize="md:w-20 md:h-20 "
+        display="md:flex hidden"
       />
     </header>
   );

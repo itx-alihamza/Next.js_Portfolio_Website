@@ -15,7 +15,7 @@ const Experience = () => {
       </h1>
       <div
         ref={ref}
-        className="relative w-9/12 flex justify-center items-center"
+        className="relative w-9/12 md:w-full flex justify-center items-center"
       >
         <motion.div
           style={{ scaleY: scrollYProgress }}
