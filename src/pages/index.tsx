@@ -20,7 +20,7 @@ export default function Home() {
       </Head>
       <main className="w-full h-auto flex flex-col  px-32 xl:p-24 lg:p-14 md:p-12 sm:p-8 dark:bg-dark dark:text-light">
         <TransitionEffect />
-        <div className=" h-full inline-block z-0 bg-light dark:bg-dark dark:text-light px-24 2xl:pb-24 2xl:px-24 md:px-12 sm:px-8 w-full pt-0">
+        <div className=" h-full inline-block z-0 bg-light dark:bg-dark dark:text-light px-24 2xl:pb-24 2xl:px-24 md:px-12 sm:px-8 xs:p-0 w-full pt-0">
           <div className=" flex lg:flex-col items-center justify-between w-full">
             <div className="w-1/2 lg:hidden xs:flex xs:w-full">
               <Image
