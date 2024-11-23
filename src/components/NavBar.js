@@ -29,7 +29,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="relative max-w-screen h-[14vh] pb-2 lg:h-[16vh] px-28 lg:px-16 md:px-10 pd:mb-6 sm:px-8 xs:pr-2  lg:py-0  dark:bg-dark  flex justify-between items-center dark:text-light">
+    <header className="relative max-w-screen h-[14vh] pb-2 lg:h-[16vh] xs:h-[14vh] px-28 lg:px-16 md:px-10 pd:mb-6 sm:px-8 xs:pr-2  lg:py-0  dark:bg-dark  flex justify-between items-center dark:text-light">
       <button
         className=" w-4 h-4 hidden flex-col justify-center items-center lg:flex"
         onClick={onNavBtnClick}
@@ -51,7 +51,7 @@ const NavBar = () => {
         ></span>
       </button>
       {navBtn ? (
-        <div className="fixed flex flex-col gap-4 justify-center items-center top-4 bottom-4 xs:top-14 xs:bottom-14 sm:top-14 sm:bottom-14 left-[12%] right-[12%] sm:left-8 sm:right-8 xs:left-4 xs:right-4   bg-opacity-90  backdrop-blur-md dark:backdrop-blur-lg bg-dark dark:bg-light/75 z-30 rounded-md">
+        <div className="fixed flex flex-col gap-4 justify-center items-center top-4 bottom-4 xs:top-52 xs:bottom-52 sm:top-14 sm:bottom-14 left-[12%] right-[12%] sm:left-8 sm:right-8 xs:left-4 xs:right-4   bg-opacity-90  backdrop-blur-md dark:backdrop-blur-lg bg-dark dark:bg-light/75 z-30 rounded-md">
           <nav className="flex flex-col gap-4 justify-center items-center">
             <CustomLink
               setNavBtn={(toogleValue) => {
