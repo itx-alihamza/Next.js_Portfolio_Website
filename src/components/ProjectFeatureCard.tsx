@@ -41,17 +41,20 @@ const ProjectFeatureCard = ({
   return (
     <div
       className={`${
-        colSpan === ColSpanType.TWO ? "col-span-2" : "col-span-1"
-      } p-[1.5rem] gap-6 grid ${
-        colSpan === ColSpanType.TWO ? "grid-cols-2 p-[3rem]" : ""
+        colSpan === ColSpanType.TWO ? "col-span-2 sm:col-span-1" : "col-span-1"
+      } p-6 md:p-5 gap-6 grid ${
+        colSpan === ColSpanType.TWO ? "grid-cols-2 lg:grid-cols-1 p-[3rem]" : ""
       } rounded-3xl border-black border dark:text-light dark:border-light`}
       style={cardShadow}
     >
-      <Link href="" className="w-full h-full overflow-hidden rounded-lg">
+      <Link
+        href=""
+        className="w-full h-full overflow-hidden rounded-lg content-center"
+      >
         <motion.div
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.2 }}
-          className="w-full h-full"
+          className="w-full h-auto "
         >
           <Image
             src={image}
@@ -62,45 +65,58 @@ const ProjectFeatureCard = ({
           />
         </motion.div>
       </Link>
-      <div className="flex flex-col justify-between items-start">
+      <div className="flex flex-col md:gap-4 justify-between items-start">
         <h2
           className={`text-primary ${
-            colSpan === 2 ? "text-xl" : "text-base"
+            colSpan === 2 ? "text-xl md:text-lg" : "text-base"
           } font-semibold`}
         >
           {contentType}
         </h2>
-        <a href={link} className="text-4xl font-bold hover:underline">
+        <a
+          href={link}
+          className="text-4xl lg:text-2xl font-bold hover:underline"
+        >
           {heading}
         </a>
-        {colSpan == ColSpanType.TWO ? (
-          <p className="text-dark text-base font-medium dark:text-light">
-            {detail}
-          </p>
-        ) : null}
+        <p
+          className={`${
+            colSpan === ColSpanType.TWO ? "block" : "hidden"
+          }  sm:block text-dark text-base font-medium dark:text-light`}
+        >
+          {detail}
+        </p>
 
-        {colSpan === ColSpanType.TWO ? (
-          <div className="flex flex-row items-center gap-4">
-            <GithubIcon className="w-10 h-10" />
-            <div className="w-36 h-12 bg-dark dark:bg-light px-2 py-1  flex justify-center items-center rounded-lg">
-              <a className=" text-center text-lg  font-bold text-light dark:text-dark">
-                Visit Project
-              </a>
-            </div>
-          </div>
-        ) : (
-          <div className="w-full flex flex-row justify-between items-center">
-            <a
-              href="http://www.something.com"
-              className=" text-center text-xl underline text-dark"
-            >
-              Visit
-            </a>
-            <a href="http://www.something.com">
-              <GithubIcon className="w-8 h-8" />
+        {/* {colSpan === ColSpanType.TWO ? ( */}
+        <div
+          className={`${
+            colSpan === ColSpanType.TWO ? "flex" : "hidden sm:flex"
+          } flex-row items-center gap-4`}
+        >
+          <GithubIcon className="w-10 h-10" />
+          <div className="w-34 h-10 bg-dark dark:bg-light px-2 py-1  flex justify-center items-center rounded-lg">
+            <a className=" text-center text-base  font-bold text-light dark:text-dark">
+              Visit Project
             </a>
           </div>
-        )}
+        </div>
+        {/* ) : ( */}
+        <div
+          className={`${
+            colSpan === ColSpanType.TWO ? "hidden" : "flex sm:hidden"
+          } w-full  flex-row justify-between items-center`}
+        >
+          <a
+            href="http://www.something.com"
+            className=" text-center text-xl underline text-dark"
+          >
+            Visit
+          </a>
+          <a href="http://www.something.com">
+            <GithubIcon className="w-8 h-8" />
+          </a>
+        </div>
+        {/* )} */}
       </div>
     </div>
   );

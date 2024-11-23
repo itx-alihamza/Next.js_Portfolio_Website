@@ -8,8 +8,13 @@ const LiIcon = ({ reference }) => {
   });
   const springValue = useSpring(scrollYProgress);
   return (
-    <figure className="absolute left-0 stroke-dark dark:stroke-light">
-      <svg className="-rotate-90" width="75" height="75" viewBox="0 0 100 100">
+    <figure className="absolute left-0 md:translate-x-2.5 sm:-translate-x-5 stroke-dark dark:stroke-light">
+      <svg
+        className="-rotate-90 md:w-14 md:h-14"
+        width="75"
+        height="75"
+        viewBox="0 0 100 100"
+      >
         <circle
           cx="75"
           cy="50"

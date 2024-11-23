@@ -7,6 +7,7 @@ import HireMe from "src/components/HireMe";
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 import { ThemeProvider } from "src/components/hooks/useThemeContext";
+import { AnimatePresence } from "framer-motion";
 
 const montserrant = Montserrat({
   subsets: ["latin"],
@@ -15,19 +16,22 @@ const montserrant = Montserrat({
 
 export default function App({ Component, pageProps }: any) {
   const curPath = usePathname();
+  const router = useRouter();
   return (
     <ThemeProvider>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="relativez min-h-screen flex flex-col bg-light">
+      <div className="relative min-h-screen flex flex-col bg-light">
         <NavBar />
 
         <main
           className={`${montserrant.variable} font-mont bg-light dark:bg-dark w-full  flex flex-col justify-normal flex-grow`}
         >
-          <Component {...pageProps} />
+          <AnimatePresence mode="wait">
+            <Component key={router.asPath} {...pageProps} />
+          </AnimatePresence>
         </main>
 
         <Footer className={``} />

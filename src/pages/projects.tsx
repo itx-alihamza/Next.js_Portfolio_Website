@@ -6,6 +6,7 @@ import ProjectFeatureCard, {
 } from "src/components/ProjectFeatureCard";
 import coverImg from "../../public/images/projects/agency-website-cover-image.jpg";
 import Image from "next/image";
+import TransitionEffect from "src/components/TransitionEffect";
 
 const projects = () => {
   return (
@@ -14,12 +15,13 @@ const projects = () => {
         <title>Ali Hamza | projects page</title>
         <meta name="description" content="any descroptoin" />
       </Head>
-      <main className="w-full h-auto flex flex-col  px-32 dark:bg-dark dark:text-light">
+      <main className="w-full h-auto flex flex-col  px-32 xl:p-24 lg:p-14 md:p-12 sm:p-8 dark:bg-dark dark:text-light">
+        <TransitionEffect />
         <AnimatedText
-          className="text-8xl mt-24 mb-6"
+          className="text-[90px] lg:!text-7xl sm:!text-6xl xs:!text-4xl"
           text={`Imagination Trumps Knowledge! `}
         />
-        <div className="w-full h-auto py-24 grid grid-cols-2 gap-28 ">
+        <div className="w-full h-auto py-24 lg:py-20 md:py-18 sm:py-16 xs:py-12 grid grid-cols-2 sm:grid-cols-1 gap-24 gap-y-32 xl:gap-x-14 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
           <ProjectFeatureCard
             colSpan={ColSpanType.TWO}
             contentType="Portfolio Website"

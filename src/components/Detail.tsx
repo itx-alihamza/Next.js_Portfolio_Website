@@ -23,7 +23,7 @@ const Detail = ({
   return (
     <li
       ref={ref}
-      className=" w-[60%] first:mt-0 last:mb-0 mb-20 flex flex-col justify-center items-center"
+      className=" w-[60%] md:w-[80%] md:my-8   first:mt-0 last:mb-0 mb-20 flex flex-col justify-center items-center"
     >
       <LiIcon reference={ref} />
       <motion.div
@@ -31,7 +31,7 @@ const Detail = ({
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, type: "spring" }}
       >
-        <h3 className="font-bold text-2xl">
+        <h3 className="font-bold text-2xl sm:text-xl xs:text-lg">
           {position}&nbsp;
           <a href={companyLink} className="text-primary dark:text-primaryDark">
             @{company}
@@ -41,7 +41,7 @@ const Detail = ({
         <span className="text-gray-500">
           {time} | {address}
         </span>
-        <p className="text-md">{work}</p>
+        <p className="text-md md:text-sm">{work}</p>
       </motion.div>
     </li>
   );

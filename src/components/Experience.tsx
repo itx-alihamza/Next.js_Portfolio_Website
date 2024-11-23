@@ -10,18 +10,18 @@ const Experience = () => {
   });
   return (
     <div className=" w-full h-auto flex flex-col justify-center items-center">
-      <h1 className="text-8xl w-full text-center font-bold pt-[15rem] pb-40">
+      <h1 className="text-8xl md:text-6xl xs:text-4xl w-full text-center font-bold pt-[15rem] pb-40 md:pb-16">
         Experience
       </h1>
       <div
         ref={ref}
-        className="relative w-9/12 md:w-full flex justify-center items-center"
+        className="relative w-9/12 md:w-full lg:w-full flex justify-center items-center"
       >
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="w-1 h-full absolute left-9 top-0 bg-dark origin-top dark:bg-primaryDark"
+          className="w-1 md:w-0.5 h-full absolute left-9 sm:left-2 top-0 bg-dark origin-top dark:bg-primaryDark"
         />
-        <ul className="w-full ml-4 flex flex-col justify-between items-center">
+        <ul className="w-full ml-4 xs:ml-2 flex flex-col justify-between items-center">
           <Detail
             position="Software Engineer"
             company="Google"

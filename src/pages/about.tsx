@@ -8,6 +8,7 @@ import AnimatedNumbers from "src/components/AnimatedNumber";
 import Experience from "src/components/Experience";
 import Educatoin from "src/components/Educatoin";
 import { useTheme } from "src/components/hooks/useThemeContext";
+import TransitionEffect from "src/components/TransitionEffect";
 
 type AnimatedNumProp = {
   value: number;
@@ -15,11 +16,11 @@ type AnimatedNumProp = {
 };
 const AnimatedNumbersWithText = ({ value, text }: AnimatedNumProp) => {
   return (
-    <div className="flex flex-col justify-center items-end md:items-center gap-2">
-      <span className="text-7xl font-extrabold">
+    <div className="flex flex-col justify-center items-end lg:items-center gap-2">
+      <span className="text-7xl md:text-6xl sm:text-5xl xs:text-4xl font-extrabold">
         <AnimatedNumbers value={value} />+
       </span>
-      <h3 className="text-bold text-2xl md:text-lg md:text-center text-dark dark:text-light">
+      <h3 className="text-bold text-2xl md:text-lg sm:text-base xs:text-sm md:text-center text-dark dark:text-light">
         {text}
       </h3>
     </div>
@@ -42,20 +43,22 @@ const About = () => {
       <Head>
         <title>AliHamza | About Page</title>
       </Head>
-      <main className="max-w-screen h-auto dark:bg-dark dark:text-light">
-        <Layout className=" py-20 pt-12">
-          <div className="text-center mb-16">
+
+      <main className=" max-w-screen h-auto dark:bg-dark dark:text-light">
+        <TransitionEffect />
+        <Layout className=" py-20 pt-12 lg:p-14 sm:p-8">
+          <div className="text-center mb-16 sm:mb-8">
             <AnimatedText
               text="Passion Fuels"
-              className="text-[90px] md:!text-7xl"
+              className="text-[90px] lg:!text-7xl sm:!text-6xl xs:!text-4xl"
             />
             <AnimatedText
               text="Purpose!"
-              className="text-[90px] md:!text-7xl"
+              className="text-[90px] lg:!text-7xl sm:!text-6xl xs:!text-4xl"
             />
           </div>
-          <div className="w-full grid grid-cols-3 md:gap-16 md:grid-cols-2">
-            <div className="flex flex-col text-justify font-medium items-start gap-4 overflow-hidden">
+          <div className="w-full grid grid-cols-3 lg:gap-16 lg:grid-cols-2 md:grid-cols-1">
+            <div className="flex flex-col text-justify font-medium items-start gap-4 overflow-hidden md:order-2">
               <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-400">
                 BIOGRAPHY
               </h3>
@@ -80,7 +83,7 @@ const About = () => {
               </p>
             </div>
             <div
-              className="ml-16 md:ml-0 border-1 border-purple-800  relative w-full h-max p-6 border rounded-2xl bg-light dark:bg-dark  dark:border-light   "
+              className="ml-16 lg:ml-0 border-1 border-purple-800  relative w-full h-max p-6 border rounded-2xl bg-light dark:bg-dark  dark:border-light md:order-1  "
               style={cardStyle}
             >
               {/* <div className="border-2 border-blue-950 absolute -top-4 -left-3 p-6  h-max w-full bg-light rounded-3xl"> */}
@@ -93,7 +96,7 @@ const About = () => {
               />
               {/* </div> */}
             </div>
-            <div className="flex flex-col justify-between items-end overflow-hidden md:gap-10 md:col-span-2 md:flex-row">
+            <div className="flex flex-col justify-between items-end lg:items-center overflow-hidden lg:col-span-2 md:col-span-1 md:order-3 lg:flex-row">
               <AnimatedNumbersWithText text="satisfied clients" value={50} />
               <AnimatedNumbersWithText text="projects completed" value={40} />
               <AnimatedNumbersWithText text="Years of experiences" value={4} />

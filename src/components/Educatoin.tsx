@@ -4,12 +4,12 @@ import Detail from "./Detail";
 const Educatoin = () => {
   return (
     <div className=" w-full h-auto flex flex-col justify-center items-center">
-      <h1 className="text-8xl w-full text-center font-bold pt-[15rem] pb-40">
+      <h1 className="text-8xl md:text-6xl xs:text-4xl w-full text-center font-bold pt-[15rem] pb-40 md:pb-16">
         Education
       </h1>
-      <div className="relative w-9/12 md:w-full flex justify-center items-center">
-        <div className="w-1 h-full absolute left-9 top-0 bg-dark dark:bg-primaryDark origin-top" />
-        <ul className="w-full ml-4 flex flex-col justify-between items-center">
+      <div className="relative w-9/12 md:w-full lg:w-full flex justify-center items-center">
+        <div className="w-1 md:w-0.5 h-full absolute left-9 sm:left-2 top-0 bg-dark origin-top dark:bg-primaryDark" />
+        <ul className="w-full ml-4 xs:ml-2 flex flex-col justify-between items-center">
           <Detail
             position="Bachelor of Science in Computer Science"
             company="Google"

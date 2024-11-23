@@ -1,7 +1,5 @@
-import Link from "next/link";
 import React, { useState } from "react";
 import Logo from "./Logo";
-import { useRouter } from "next/router";
 import {
   DribbbleIcon,
   GithubIcon,
@@ -15,27 +13,7 @@ import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
 import { useTheme } from "./hooks/useThemeContext";
 import HireMe from "./HireMe";
-
-const CustomLink = ({ href, title, className = "" }) => {
-  const router = useRouter();
-  console.log("Router :", router);
-
-  return (
-    <Link
-      href={href}
-      className={`${className} relative group lg:text-light lg:dark:text-dark text-dark font-medium dark:text-light`}
-    >
-      {title}
-      <span
-        className={`h-[1px] inline-block w-[0px] lg:bg-light lg:dark:bg-dark bg-black dark:bg-light absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] duration-300
-          ${router.asPath == href ? "w-full" : "w-0"}
-        `}
-      >
-        &nbsp;
-      </span>
-    </Link>
-  );
-};
+import CustomLink from "./CustomLink.tsx";
 
 // type Props = {
 //   isDarkMode: any;
@@ -51,7 +29,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="max-w-screen h-[14vh] pb-2 lg:h-[16vh] px-28 py-10 lg:px-16 md:px-10 pd:mb-6 sm:px-8 xs:pr-2  lg:py-0  dark:bg-dark  flex justify-between items-center dark:text-light">
+    <header className="relative max-w-screen h-[14vh] pb-2 lg:h-[16vh] px-28 lg:px-16 md:px-10 pd:mb-6 sm:px-8 xs:pr-2  lg:py-0  dark:bg-dark  flex justify-between items-center dark:text-light">
       <button
         className=" w-4 h-4 hidden flex-col justify-center items-center lg:flex"
         onClick={onNavBtnClick}
@@ -73,12 +51,38 @@ const NavBar = () => {
         ></span>
       </button>
       {navBtn ? (
-        <div className="fixed flex flex-col gap-4 justify-center items-center top-4 bottom-4 left-[12%] right-[12%] sm:left-8 sm:right-8 xs:left-4 xs:right-4   bg-opacity-90  backdrop-blur-md dark:backdrop-blur-lg bg-dark dark:bg-light/75 z-30 rounded-md">
+        <div className="fixed flex flex-col gap-4 justify-center items-center top-4 bottom-4 xs:top-14 xs:bottom-14 sm:top-14 sm:bottom-14 left-[12%] right-[12%] sm:left-8 sm:right-8 xs:left-4 xs:right-4   bg-opacity-90  backdrop-blur-md dark:backdrop-blur-lg bg-dark dark:bg-light/75 z-30 rounded-md">
           <nav className="flex flex-col gap-4 justify-center items-center">
-            <CustomLink href="/" title="Home" className="mx-4" />
-            <CustomLink href="/about" title="About" className="mx-4" />
-            <CustomLink href="/projects" title="Project" className="mx-4" />
-            <CustomLink href="/articles" title="Articles" className="mx-4" />
+            <CustomLink
+              setNavBtn={(toogleValue) => {
+                setNavBtn(toogleValue);
+              }}
+              navBtn={navBtn}
+              href="/"
+              title="Home"
+              className="mx-4"
+            />
+            <CustomLink
+              setNavBtn={setNavBtn}
+              navBtn={navBtn}
+              href="/about"
+              title="About"
+              className="mx-4"
+            />
+            <CustomLink
+              setNavBtn={setNavBtn}
+              navBtn={navBtn}
+              href="/projects"
+              title="Project"
+              className="mx-4"
+            />
+            <CustomLink
+              setNavBtn={setNavBtn}
+              navBtn={navBtn}
+              href="/articles"
+              title="Articles"
+              className="mx-4"
+            />
           </nav>
           <nav className="flex items-center justify-center flex-wrap gap-5 sm:gap-2 ">
             <motion.a
@@ -145,15 +149,22 @@ const NavBar = () => {
           </nav>
         </div>
       ) : null}
-      <nav className=" gap-2 lg:hidden">
+      <nav className="flex gap-2 lg:hidden">
         <CustomLink href="/" title="Home" className="mx-4" />
         <CustomLink href="/about" title="About" className="mx-4" />
         <CustomLink href="/projects" title="Project" className="mx-4" />
         <CustomLink href="/articles" title="Articles" className="mx-4" />
       </nav>
       <Logo />
+      <HireMe
+        className=" flex w-20 md:mt-4 md:z-10 "
+        circularImgSize="md:w-20 md:h-20 "
+        display="md:flex hidden"
+      />
       <nav className="flex lg:hidden items-center justify-center flex-wrap gap-4 ">
         <motion.a
+          setNavBtn={setNavBtn}
+          navBtn={navBtn}
           href="https://twitter.com"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.5 }}
@@ -162,6 +173,8 @@ const NavBar = () => {
           <TwitterIcon />
         </motion.a>
         <motion.a
+          setNavBtn={setNavBtn}
+          navBtn={navBtn}
           href="https://twitter.com"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.5 }}
@@ -170,6 +183,8 @@ const NavBar = () => {
           <GithubIcon className="w-full h-full" />
         </motion.a>
         <motion.a
+          setNavBtn={setNavBtn}
+          navBtn={navBtn}
           href="https://twitter.com"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.5 }}
@@ -178,6 +193,8 @@ const NavBar = () => {
           <LinkedInIcon />
         </motion.a>
         <motion.a
+          setNavBtn={setNavBtn}
+          navBtn={navBtn}
           href="https://twitter.com"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.5 }}
@@ -186,6 +203,8 @@ const NavBar = () => {
           <PinterestIcon />
         </motion.a>
         <motion.a
+          setNavBtn={setNavBtn}
+          navBtn={navBtn}
           href="https://twitter.com"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.5 }}
@@ -213,11 +232,6 @@ const NavBar = () => {
           )}
         </motion.button>
       </nav>
-      <HireMe
-        className=" flex w-20 md:mt-4 md:z-10 "
-        circularImgSize="md:w-20 md:h-20 "
-        display="md:flex hidden"
-      />
     </header>
   );
 };

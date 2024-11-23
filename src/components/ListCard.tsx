@@ -17,19 +17,19 @@ const ListCard = ({ className, heading, date }: Props) => {
     boxShadow:
       theme === "dark"
         ? "10px 12px 0 rgba(255, 255, 255, 1)"
-        : "10px 12px 0 rgba(0, 0, 0, 1)",
+        : "4px 4px 0 rgba(0, 0, 0, 1)",
   };
   return (
     <motion.li
       initial={{ y: 200 }}
       whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
       viewport={{ once: true }}
-      className={`w-full h-auto flex flex-row justify-between items-center px-2 py-5 border border-black dark:border-light rounded-lg  dark:text-light`}
+      className={`w-full h-auto flex flex-row sm:flex-col justify-between items-center sm:items-start px-2 py-5 border border-black dark:border-light rounded-lg  dark:text-light`}
       style={cardShadow}
     >
       <a
         href=""
-        className="w-[80%] text-[1.4rem] text-dark font-semibold hover:underline  dark:text-light"
+        className="w-[80%] text-2xl md:text-lg xs:text-base text-dark font-semibold hover:underline  dark:text-light"
       >
         {heading}
       </a>
