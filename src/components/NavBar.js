@@ -51,7 +51,7 @@ const NavBar = () => {
         ></span>
       </button>
       {navBtn ? (
-        <div className="fixed flex flex-col gap-4 justify-center items-center top-4 bottom-4 xs:top-52 xs:bottom-52 sm:top-14 sm:bottom-14 left-[12%] right-[12%] sm:left-8 sm:right-8 xs:left-4 xs:right-4   bg-opacity-90  backdrop-blur-md dark:backdrop-blur-lg bg-dark dark:bg-light/75 z-30 rounded-md">
+        <div className="fixed flex flex-col gap-4 justify-center items-center top-4 bottom-4 xs:top-[20%] xs:bottom-[20%] sm:top-14 sm:bottom-14 left-[12%] right-[12%] sm:left-8 sm:right-8 xs:left-4 xs:right-4   bg-opacity-90  backdrop-blur-md dark:backdrop-blur-lg bg-dark dark:bg-light/75 z-30 rounded-md">
           <nav className="flex flex-col gap-4 justify-center items-center">
             <CustomLink
               setNavBtn={(toogleValue) => {
