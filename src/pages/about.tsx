@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import AnimatedText from "src/components/AnimatedText";
 import Layout from "src/components/Layout";
-import ProfilePic from "../../public/images/profile/developer-pic-2.jpg";
+import ali_hamza from "../../public/images/profile/ali_hamza.jpg";
 import Skills from "src/components/Skills";
 import AnimatedNumbers from "src/components/AnimatedNumber";
 import Experience from "src/components/Experience";
@@ -63,7 +63,7 @@ const About = () => {
                 BIOGRAPHY
               </h3>
               <p>
-                Hi, I&apos;m <b>CodeBucks</b>, a web developer and UI/UX
+                Hi, I&apos;m <b>Ali Hamza</b>, a web developer and UI/UX
                 designer with a passion for creating beautiful, functional, and
                 user-centered digital experiences. With 4 years of experience in
                 the field. I am always looking for new and innovative ways to
@@ -83,13 +83,13 @@ const About = () => {
               </p>
             </div>
             <div
-              className="ml-16 lg:ml-0 border-1 border-purple-800  relative w-full h-max p-6 border rounded-2xl bg-light dark:bg-dark  dark:border-light md:order-1  "
+              className="ml-16 lg:ml-0 border-1 border-purple-800  relative max-w-11/12 h-max p-6 border rounded-2xl bg-light dark:bg-dark  dark:border-light md:order-1  "
               style={cardStyle}
             >
               {/* <div className="border-2 border-blue-950 absolute -top-4 -left-3 p-6  h-max w-full bg-light rounded-3xl"> */}
               <Image
                 className=" rounded-3xl"
-                src={ProfilePic}
+                src={ali_hamza}
                 alt="Profile pic"
                 priority
                 sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
